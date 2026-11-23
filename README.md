@@ -2,7 +2,6 @@
 
 I built an agent that answers questions about Alpaca's Trading API. It searches 17 pages of Alpaca's docs, writes an example API call, and runs it against Alpaca's paper trading sandbox after I approve it. Paper trading uses fake money.
 
-I haven't run the full agent eval yet because I haven't added API keys. The search numbers below are real.
 
 ## How it works
 
