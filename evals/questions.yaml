@@ -1,0 +1,152 @@
+# 20 test questions with known answers, all checked against the docs in sources.txt.
+#
+# pages     The answer lives on at least one of these pages (by slug).
+#           Retrieval passes if search returns any of them. Citation passes
+#           if the final answer links to any of them.
+# call      The API call the agent should propose. Passes if any proposed call
+#           matches. Only the listed fields are compared. A list means "any of".
+#           Leave it out when no call is needed.
+# mentions  Words the final answer must contain (case doesn't matter).
+#           A list inside the list means "any of these".
+
+- id: q01
+  question: How do I buy $50 worth of AAPL using fractional shares?
+  pages: [fractional-trading, postorder]
+  call:
+    method: POST
+    path: /v2/orders
+    body: {symbol: AAPL, notional: 50, side: buy, type: market, time_in_force: day}
+  mentions: [notional, day]
+
+- id: q02
+  question: How do I buy half a share of TSLA?
+  pages: [fractional-trading, postorder]
+  call:
+    method: POST
+    path: /v2/orders
+    body: {symbol: TSLA, qty: 0.5, side: buy, time_in_force: day}
+  mentions: [qty, day]
+
+- id: q03
+  question: What base URL should I use for paper trading?
+  pages: [paper-trading, authentication]
+  mentions: [paper-api.alpaca.markets]
+
+- id: q04
+  question: Which HTTP headers do I use to send my API key and secret?
+  pages: [authentication]
+  mentions: [APCA-API-KEY-ID, APCA-API-SECRET-KEY]
+
+- id: q05
+  question: How much buying power does my account have?
+  pages: [working-with-account, getaccount-1]
+  call: {method: GET, path: /v2/account}
+  mentions: [buying_power]
+
+- id: q06
+  question: Is the stock market open right now?
+  pages: [legacyclock]
+  call: {method: GET, path: /v2/clock}
+  mentions: [is_open]
+
+- id: q07
+  question: How can I check whether SPY supports fractional trading?
+  pages: [get-v2-assets-symbol_or_asset_id, working-with-assets, fractional-trading]
+  call: {method: GET, path: /v2/assets/SPY}
+  mentions: [fractionable]
+
+- id: q08
+  question: Place a limit order to buy 1 share of AAPL at $150.
+  pages: [orders-at-alpaca, postorder]
+  call:
+    method: POST
+    path: /v2/orders
+    body: {symbol: AAPL, qty: 1, side: buy, type: limit, limit_price: 150}
+  mentions: [limit_price]
+
+- id: q09
+  question: How do I list all of my open orders?
+  pages: [getallorders-1, working-with-orders]
+  call: {method: GET, path: /v2/orders}
+  mentions: [open]
+
+- id: q10
+  question: How do I cancel an order if I know its order ID?
+  pages: [deleteorderbyorderid-1, working-with-orders]
+  # No call graded. The agent has no real order ID, so a good answer may list
+  # orders first or just show the request.
+  mentions: [DELETE, /v2/orders/]
+
+- id: q11
+  question: How do I close my entire AAPL position?
+  pages: [deleteopenposition-1, working-with-positions]
+  call: {method: DELETE, path: /v2/positions/AAPL}
+
+- id: q12
+  question: How do I sell half of my AAPL position in a single request?
+  pages: [deleteopenposition-1]
+  call:
+    method: DELETE
+    path: /v2/positions/AAPL
+    query: {percentage: 50}
+  mentions: [percentage]
+
+- id: q13
+  question: How do I submit a bracket order to buy 10 shares of SPY with a take profit at $510 and a stop loss at $490?
+  pages: [orders-at-alpaca, postorder, working-with-orders]
+  call:
+    method: POST
+    path: /v2/orders
+    body:
+      symbol: SPY
+      qty: 10
+      side: buy
+      order_class: bracket
+      take_profit: {limit_price: 510}
+      stop_loss: {stop_price: 490}
+  mentions: [bracket]
+
+- id: q14
+  question: How do I place a trailing stop order to sell 1 share of AAPL that trails the price by 2%?
+  pages: [orders-at-alpaca, postorder, working-with-orders]
+  call:
+    method: POST
+    path: /v2/orders
+    body: {symbol: AAPL, qty: 1, side: sell, type: trailing_stop, trail_percent: 2}
+  mentions: [trail_percent]
+
+- id: q15
+  question: What time_in_force values can I use for stock orders?
+  pages: [orders-at-alpaca, postorder]
+  mentions: [day, gtc, opg, cls, ioc, fok]
+
+- id: q16
+  question: Can I place a fractional order with time_in_force set to gtc?
+  pages: [fractional-trading, orders-at-alpaca, postorder]
+  # The docs say fractional orders need time_in_force day.
+  mentions: [day]
+
+- id: q17
+  question: How do I make a limit order eligible for pre-market and after-hours trading?
+  pages: [orders-at-alpaca, postorder]
+  call:
+    method: POST
+    path: /v2/orders
+    body: {type: limit, extended_hours: true, time_in_force: [day, gtc]}
+  mentions: [extended_hours]
+
+- id: q18
+  question: Why would Alpaca reject my order with a 403 for a possible wash trade, and how can I avoid it?
+  pages: [user-protection]
+  mentions: [wash trade, [bracket, oco]]
+
+- id: q19
+  question: How do I reset my paper trading account?
+  pages: [paper-trading]
+  # The docs replaced "reset" with creating a new paper account in the dashboard.
+  mentions: [new paper account, [api key, new key]]
+
+- id: q20
+  question: What is the smallest dollar amount I can buy with a notional order?
+  pages: [fractional-trading]
+  mentions: [["$1", "1 dollar", "one dollar"]]

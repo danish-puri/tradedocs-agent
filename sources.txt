@@ -1,0 +1,20 @@
+# The 17 Alpaca doc pages the agent knows about. One URL per line.
+# Guides
+https://docs.alpaca.markets/us/docs/authentication
+https://docs.alpaca.markets/us/docs/paper-trading
+https://docs.alpaca.markets/us/docs/working-with-account
+https://docs.alpaca.markets/us/docs/working-with-assets
+https://docs.alpaca.markets/us/docs/working-with-orders
+https://docs.alpaca.markets/us/docs/working-with-positions
+https://docs.alpaca.markets/us/docs/orders-at-alpaca
+https://docs.alpaca.markets/us/docs/fractional-trading
+https://docs.alpaca.markets/us/docs/user-protection
+# API reference (one endpoint each)
+https://docs.alpaca.markets/us/reference/getaccount-1
+https://docs.alpaca.markets/us/reference/get-v2-assets-symbol_or_asset_id
+https://docs.alpaca.markets/us/reference/postorder
+https://docs.alpaca.markets/us/reference/getallorders-1
+https://docs.alpaca.markets/us/reference/deleteorderbyorderid-1
+https://docs.alpaca.markets/us/reference/getallopenpositions
+https://docs.alpaca.markets/us/reference/deleteopenposition-1
+https://docs.alpaca.markets/us/reference/legacyclock

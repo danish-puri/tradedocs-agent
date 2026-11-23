@@ -1,0 +1,351 @@
+{
+  "ran_at": "2026-11-23T05:14:22+00:00",
+  "summary": {
+    "questions": 20,
+    "search_mode": "hybrid",
+    "top_k": 6,
+    "hit_at_k": 19,
+    "hit_at_3": 19,
+    "hit_at_1": 16
+  },
+  "rows": [
+    {
+      "id": "q01",
+      "question": "How do I buy $50 worth of AAPL using fractional shares?",
+      "expected": [
+        "fractional-trading",
+        "postorder"
+      ],
+      "retrieved": [
+        "fractional-trading",
+        "fractional-trading",
+        "fractional-trading",
+        "working-with-orders",
+        "fractional-trading",
+        "fractional-trading"
+      ],
+      "rank": 1
+    },
+    {
+      "id": "q02",
+      "question": "How do I buy half a share of TSLA?",
+      "expected": [
+        "fractional-trading",
+        "postorder"
+      ],
+      "retrieved": [
+        "orders-at-alpaca",
+        "fractional-trading",
+        "orders-at-alpaca",
+        "working-with-orders",
+        "fractional-trading",
+        "fractional-trading"
+      ],
+      "rank": 2
+    },
+    {
+      "id": "q03",
+      "question": "What base URL should I use for paper trading?",
+      "expected": [
+        "paper-trading",
+        "authentication"
+      ],
+      "retrieved": [
+        "paper-trading",
+        "paper-trading",
+        "paper-trading",
+        "paper-trading",
+        "paper-trading",
+        "paper-trading"
+      ],
+      "rank": 1
+    },
+    {
+      "id": "q04",
+      "question": "Which HTTP headers do I use to send my API key and secret?",
+      "expected": [
+        "authentication"
+      ],
+      "retrieved": [
+        "authentication",
+        "authentication",
+        "authentication",
+        "working-with-orders",
+        "working-with-orders",
+        "working-with-orders"
+      ],
+      "rank": 1
+    },
+    {
+      "id": "q05",
+      "question": "How much buying power does my account have?",
+      "expected": [
+        "working-with-account",
+        "getaccount-1"
+      ],
+      "retrieved": [
+        "orders-at-alpaca",
+        "working-with-account",
+        "working-with-account",
+        "getaccount-1",
+        "working-with-account",
+        "getaccount-1"
+      ],
+      "rank": 2
+    },
+    {
+      "id": "q06",
+      "question": "Is the stock market open right now?",
+      "expected": [
+        "legacyclock"
+      ],
+      "retrieved": [
+        "legacyclock",
+        "orders-at-alpaca",
+        "postorder",
+        "orders-at-alpaca",
+        "getallopenpositions",
+        "orders-at-alpaca"
+      ],
+      "rank": 1
+    },
+    {
+      "id": "q07",
+      "question": "How can I check whether SPY supports fractional trading?",
+      "expected": [
+        "get-v2-assets-symbol_or_asset_id",
+        "working-with-assets",
+        "fractional-trading"
+      ],
+      "retrieved": [
+        "fractional-trading",
+        "fractional-trading",
+        "fractional-trading",
+        "fractional-trading",
+        "fractional-trading",
+        "fractional-trading"
+      ],
+      "rank": 1
+    },
+    {
+      "id": "q08",
+      "question": "Place a limit order to buy 1 share of AAPL at $150.",
+      "expected": [
+        "orders-at-alpaca",
+        "postorder"
+      ],
+      "retrieved": [
+        "working-with-orders",
+        "working-with-orders",
+        "orders-at-alpaca",
+        "working-with-orders",
+        "orders-at-alpaca",
+        "working-with-orders"
+      ],
+      "rank": 3
+    },
+    {
+      "id": "q09",
+      "question": "How do I list all of my open orders?",
+      "expected": [
+        "getallorders-1",
+        "working-with-orders"
+      ],
+      "retrieved": [
+        "getallorders-1",
+        "working-with-orders",
+        "orders-at-alpaca",
+        "getallorders-1",
+        "orders-at-alpaca",
+        "orders-at-alpaca"
+      ],
+      "rank": 1
+    },
+    {
+      "id": "q10",
+      "question": "How do I cancel an order if I know its order ID?",
+      "expected": [
+        "deleteorderbyorderid-1",
+        "working-with-orders"
+      ],
+      "retrieved": [
+        "deleteorderbyorderid-1",
+        "orders-at-alpaca",
+        "orders-at-alpaca",
+        "orders-at-alpaca",
+        "orders-at-alpaca",
+        "orders-at-alpaca"
+      ],
+      "rank": 1
+    },
+    {
+      "id": "q11",
+      "question": "How do I close my entire AAPL position?",
+      "expected": [
+        "deleteopenposition-1",
+        "working-with-positions"
+      ],
+      "retrieved": [
+        "working-with-positions",
+        "orders-at-alpaca",
+        "orders-at-alpaca",
+        "working-with-positions",
+        "deleteopenposition-1",
+        "orders-at-alpaca"
+      ],
+      "rank": 1
+    },
+    {
+      "id": "q12",
+      "question": "How do I sell half of my AAPL position in a single request?",
+      "expected": [
+        "deleteopenposition-1"
+      ],
+      "retrieved": [
+        "fractional-trading",
+        "working-with-orders",
+        "working-with-positions",
+        "working-with-orders",
+        "working-with-positions",
+        "working-with-orders"
+      ],
+      "rank": null
+    },
+    {
+      "id": "q13",
+      "question": "How do I submit a bracket order to buy 10 shares of SPY with a take profit at $510 and a stop loss at $490?",
+      "expected": [
+        "orders-at-alpaca",
+        "postorder",
+        "working-with-orders"
+      ],
+      "retrieved": [
+        "working-with-orders",
+        "orders-at-alpaca",
+        "orders-at-alpaca",
+        "orders-at-alpaca",
+        "working-with-orders",
+        "orders-at-alpaca"
+      ],
+      "rank": 1
+    },
+    {
+      "id": "q14",
+      "question": "How do I place a trailing stop order to sell 1 share of AAPL that trails the price by 2%?",
+      "expected": [
+        "orders-at-alpaca",
+        "postorder",
+        "working-with-orders"
+      ],
+      "retrieved": [
+        "working-with-orders",
+        "working-with-orders",
+        "working-with-orders",
+        "working-with-orders",
+        "working-with-orders",
+        "orders-at-alpaca"
+      ],
+      "rank": 1
+    },
+    {
+      "id": "q15",
+      "question": "What time_in_force values can I use for stock orders?",
+      "expected": [
+        "orders-at-alpaca",
+        "postorder"
+      ],
+      "retrieved": [
+        "orders-at-alpaca",
+        "postorder",
+        "getallorders-1",
+        "postorder",
+        "deleteopenposition-1",
+        "working-with-orders"
+      ],
+      "rank": 1
+    },
+    {
+      "id": "q16",
+      "question": "Can I place a fractional order with time_in_force set to gtc?",
+      "expected": [
+        "fractional-trading",
+        "orders-at-alpaca",
+        "postorder"
+      ],
+      "retrieved": [
+        "orders-at-alpaca",
+        "orders-at-alpaca",
+        "postorder",
+        "orders-at-alpaca",
+        "fractional-trading",
+        "orders-at-alpaca"
+      ],
+      "rank": 1
+    },
+    {
+      "id": "q17",
+      "question": "How do I make a limit order eligible for pre-market and after-hours trading?",
+      "expected": [
+        "orders-at-alpaca",
+        "postorder"
+      ],
+      "retrieved": [
+        "orders-at-alpaca",
+        "orders-at-alpaca",
+        "postorder",
+        "orders-at-alpaca",
+        "orders-at-alpaca",
+        "orders-at-alpaca"
+      ],
+      "rank": 1
+    },
+    {
+      "id": "q18",
+      "question": "Why would Alpaca reject my order with a 403 for a possible wash trade, and how can I avoid it?",
+      "expected": [
+        "user-protection"
+      ],
+      "retrieved": [
+        "user-protection",
+        "user-protection",
+        "user-protection",
+        "user-protection",
+        "user-protection",
+        "user-protection"
+      ],
+      "rank": 1
+    },
+    {
+      "id": "q19",
+      "question": "How do I reset my paper trading account?",
+      "expected": [
+        "paper-trading"
+      ],
+      "retrieved": [
+        "paper-trading",
+        "paper-trading",
+        "paper-trading",
+        "paper-trading",
+        "paper-trading",
+        "paper-trading"
+      ],
+      "rank": 1
+    },
+    {
+      "id": "q20",
+      "question": "What is the smallest dollar amount I can buy with a notional order?",
+      "expected": [
+        "fractional-trading"
+      ],
+      "retrieved": [
+        "fractional-trading",
+        "postorder",
+        "postorder",
+        "getallorders-1",
+        "deleteopenposition-1",
+        "fractional-trading"
+      ],
+      "rank": 1
+    }
+  ]
+}

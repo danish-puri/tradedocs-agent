@@ -18,9 +18,8 @@ venv/
 .mypy_cache/
 .ruff_cache/
 
-# Vector store data
-chroma_db/
-.chroma/
+# Downloaded docs, endpoint list, and vector store (rebuilt by the ingest step)
+data/
 
 # Editors and OS
 .vscode/
